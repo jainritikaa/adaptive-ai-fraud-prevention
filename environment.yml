@@ -1,14 +1,35 @@
 name: fraud-detection
 channels:
-  - defaults
   - conda-forge
+  - defaults
 dependencies:
-  - python=3.8
-  - numpy
+  - python=3.9  # Change Python version to 3.9
   - pandas
+  - numpy
+  - scipy
   - matplotlib
   - seaborn
-  - scikit-learn
+  - pytorch
+  - torchvision
   - pip
   - pip:
-      - torch
+      - scikit-learn
+      - xgboost
+      - lightgbm
+      - torch-geometric
+      - tensorflow  # Use TensorFlow (not TensorFlow Lite)
+      - spacy
+      - transformers
+      - nltk
+      - opencv-python
+      - pytesseract
+      - Pillow
+      - web3
+      - cryptography
+      - streamlit
+      - plotly
+      - flask
+      - gunicorn
+      - pytest
+      - loguru
+      - joblib
