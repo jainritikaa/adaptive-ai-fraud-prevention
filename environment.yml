@@ -36,5 +36,5 @@ dependencies:
       - joblib  # Used for saving machine learning models
       - flask-cors  # CORS handling for API
       - flask-sqlalchemy  # SQLAlchemy support for database interaction
-      - psycopg2  # PostgreSQL database adapter (if using PostgreSQL)
+      - mysqlclient  # MySQL database adapter for Python (use this instead of psycopg2)
       - flask-debugtoolbar  # Debugging Flask during development
