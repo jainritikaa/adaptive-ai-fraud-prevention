@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
-from endpoints.fraud_detection import process_fraud_detection
-from utils.preprocess import preprocess  # Assuming the preprocess function is imported from utils/preprocess.py
+from endpoints.fraud_detection import predict_fraud_category  # Importing fraud prediction function
+from utils.preprocess import preprocess  # Importing preprocess function from utils.preprocess.py
 
 app = Flask(__name__)
 
@@ -37,10 +37,10 @@ def detect_fraud():
         features = data['features']
 
         # Preprocess the input features using the preprocess function
-        processed_features = preprocess(features)
+        processed_features = preprocess(features)  # Using the updated preprocess function
 
         # Call fraud detection function (which removes policy_number from features)
-        fraud_category, probability = process_fraud_detection(processed_features)
+        fraud_category, probability = predict_fraud_category(processed_features)
 
         # Save to database
         prediction = FraudPrediction(

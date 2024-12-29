@@ -2,15 +2,17 @@ import joblib
 import numpy as np
 
 # Load the fraud detection model
-fraud_detection_model = joblib.load('models/fraud_detection_model.joblib')
+fraud_detection_model = joblib.load('../models/fraud-detection-model.joblib')
 
 # Define a mapping between fraud category index and fraud category string
 fraud_categories = {
-    0: "Misrepresentation",
-    1: "Exaggeration",
-    2: "False Claim",
-    3: "Forgery",
-    4: "Fraudulent Claim",
+    0: "Claims Fraud",
+    1: "Signature Forgery",
+    2: "Document Tampering",
+    3: "Misappropriating Funds",
+    4: "Misrepresentation",
+    5: "Misselling",
+    6: "Miscellaneous"
     # Add your additional fraud categories
 }
 
