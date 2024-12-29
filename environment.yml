@@ -38,3 +38,6 @@ dependencies:
       - flask-sqlalchemy  # SQLAlchemy support for database interaction
       - mysqlclient  # MySQL database adapter for Python (use this instead of psycopg2)
       - flask-debugtoolbar  # Debugging Flask during development
+      - pycryptodome  # Additional cryptographic utilities for document validation
+      - PyPDF2  # For PDF document manipulation (for forgery detection)
+      - docx  # For working with .docx files (for forgery detection)
