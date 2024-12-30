@@ -10,7 +10,7 @@ from utils.preprocess import preprocess  # Importing preprocess function from ut
 app = Flask(__name__)
 
 # Configure the database URI (replace with your actual database credentials)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://mrigank:mrigank%4011@localhost/fraud_detection_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ritika:Payal%401234@localhost/fraud_detection_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Configure upload folder
@@ -42,7 +42,6 @@ class ForgeryDetection(db.Model):
 def home():
     return jsonify({"message": "Welcome to the Flask app!"})
 
-# Detect fraud and save to database
 @app.route('/detect_fraud', methods=['POST'])
 def detect_fraud():
     try:
@@ -60,9 +59,13 @@ def detect_fraud():
 
         # Preprocess the input features using the preprocess function
         processed_features = preprocess(features)
+        print(f"Processed features: {processed_features}")
 
         # Call fraud detection function
         fraud_category, probability, fraud_score = predict_fraud(processed_features)
+
+        if fraud_category is None or probability is None or fraud_score is None:
+            return jsonify({"error": "Failed to detect fraud. Ensure the input is valid and the model is functioning correctly."}), 500
 
         # Save to database
         prediction = FraudPrediction(

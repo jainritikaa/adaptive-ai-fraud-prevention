@@ -31,42 +31,37 @@ fraud_class_weights = {
     5: 0.4,  # Misselling (Low Risk)
     6: 0.3   # Miscellaneous (Low Risk)
 }
-
-# Updated predict_fraud_category function in fraud_detection.py
 def predict_fraud(df):
     """
-    Predict the fraud category using the fraud detection model and calculate the fraud risk score.
-    Args:
-    - df: Preprocessed DataFrame with feature columns (should be a single row or multiple rows).
-    
-    Returns:
-    - The fraud category string, the probability of that category, and the fraud risk score.
+    Predict the fraud category and calculate the fraud risk score.
     """
     try:
-        # Ensure df is a 2D array (1 row, n_features columns)
-        if len(df.shape) == 1:  # If it's a 1D array, reshape it to (1, n_features)
+        # Ensure input is a 2D array
+        if len(df.shape) == 1:
             df = df.reshape(1, -1)
-        elif len(df.shape) == 2:  # If it's already 2D, ensure it's (n_samples, n_features)
-            pass
-        else:
-            raise ValueError("Input data is not in a valid shape")
 
-        # Get the probabilities for all fraud categories
+        # Get probabilities
         fraud_probabilities = fraud_detection_model.predict_proba(df)[0]
+        print(f"Fraud probabilities: {fraud_probabilities}")
 
-        # Calculate the fraud risk score using the weighted sum of probabilities
-        fraud_risk_score = 0
-        for i, prob in enumerate(fraud_probabilities):
-            fraud_risk_score += prob * fraud_class_weights.get(i, 0)
+        # Convert any float32 to Python float (float64)
+        fraud_probabilities = fraud_probabilities.astype(float)
 
-        # Find the category with the highest probability
+        # Calculate fraud risk score
+        fraud_risk_score = sum(prob * fraud_class_weights.get(i, 0) for i, prob in enumerate(fraud_probabilities))
+
+        # Convert fraud risk score to Python float
+        fraud_risk_score = float(fraud_risk_score)
+
+        # Determine category
         fraud_category_index = np.argmax(fraud_probabilities)
         fraud_category_string = fraud_categories.get(fraud_category_index, "Unknown Category")
-
-        # Get the probability of the most likely fraud category
         fraud_probability = fraud_probabilities[fraud_category_index]
+
+        # Convert fraud_probability to Python float
+        fraud_probability = float(fraud_probability)
 
         return fraud_category_string, fraud_probability, fraud_risk_score
     except Exception as e:
-        print(f"Error during fraud detection: {e}")
+        print(f"Error in predict_fraud: {e}")
         return None, None, None

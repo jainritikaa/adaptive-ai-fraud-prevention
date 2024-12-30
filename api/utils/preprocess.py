@@ -67,8 +67,8 @@ def preprocess(data):
 
         # Debug: Print the shape of processed data
         print(f"Processed data shape: {processed_data.shape}")
-
-      
+        
+        return processed_data  # Return the processed data as a numpy array
 
     except Exception as e:
         print(f"Error in preprocessing: {e}")
