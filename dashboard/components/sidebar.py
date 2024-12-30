@@ -4,7 +4,7 @@ from PIL import Image
 def sidebar():
 
     # Use the updated parameter
-    logo_path = "static/images/logo.png"
+    logo_path = "dashboard/static/images/logo.png"
     logo = Image.open(logo_path)
     st.sidebar.image(logo, use_container_width=True)
 
