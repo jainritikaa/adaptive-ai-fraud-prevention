@@ -3,34 +3,38 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.9  # Change Python version to 3.9
-  - pandas
-  - numpy
-  - scipy
-  - matplotlib
-  - seaborn
-  - pytorch
-  - torchvision
-  - pygraphviz 
-  - pip
+  - python=3.9  # Python version to use
+  - pandas  # Used for data manipulation and analysis
+  - numpy  # Used for numerical operations
+  - scipy  # Used for scientific and technical computing
+  - matplotlib  # Used for plotting and visualizations
+  - seaborn  # Used for statistical data visualization
+  - pytorch  # Used for machine learning models (PyTorch)
+  - torchvision  # Used for computer vision with PyTorch
+  - pygraphviz  # Used for graph-based visualizations
+  - pip  # Package manager to install additional dependencies
   - pip:
-      - scikit-learn
-      - xgboost
-      - lightgbm
-      - torch-geometric
-      - tensorflow  # Use TensorFlow (not TensorFlow Lite)
-      - spacy
-      - transformers
-      - nltk
-      - opencv-python
-      - pytesseract
-      - Pillow
-      - web3
-      - cryptography
-      - streamlit
-      - plotly
-      - flask
-      - gunicorn
-      - pytest
-      - loguru
-      - joblib
+      - scikit-learn  # Used for machine learning algorithms
+      - xgboost  # Used for gradient boosting machine learning
+      - lightgbm  # Used for efficient gradient boosting
+      - torch-geometric  # Used for graph neural networks (GNNs)
+      - tensorflow  # Used for deep learning (not TensorFlow Lite)
+      - spacy  # Used for natural language processing
+      - transformers  # Used for transformer models in NLP
+      - nltk  # Used for natural language processing tools
+      - opencv-python  # Used for computer vision tasks
+      - pytesseract  # Used for optical character recognition (OCR)
+      - Pillow  # Used for image processing
+      - web3  # Used for interacting with the Ethereum blockchain
+      - cryptography  # Used for cryptographic operations
+      - streamlit  # Used for building dashboards and web apps
+      - plotly  # Used for interactive data visualizations
+      - flask  # Used for building the API
+      - gunicorn  # Used for running Flask in production
+      - pytest  # Used for unit testing
+      - loguru  # Used for logging in the project
+      - joblib  # Used for saving machine learning models
+      - flask-cors  # CORS handling for API
+      - flask-sqlalchemy  # SQLAlchemy support for database interaction
+      - psycopg2  # PostgreSQL database adapter (if using PostgreSQL)
+      - flask-debugtoolbar  # Debugging Flask during development
