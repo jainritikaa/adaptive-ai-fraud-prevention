@@ -51,14 +51,6 @@ The **Adaptive AI Fraud Prevention System** is a comprehensive and scalable solu
 
 ---
 
-## 🚀 Demo
-
-> Here's a quick preview of the system UI (mockup):
-
-![Fraud Detection UI](./assets/demo-mockup.png)  
-*Interactive dashboard showcasing real-time alerts, document verification, and fraud trends.*
-
----
 
 ## 🧰 Tech Stack
 
