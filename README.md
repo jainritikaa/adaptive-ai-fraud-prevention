@@ -34,16 +34,16 @@ The **Adaptive AI Fraud Prevention System** is a comprehensive and scalable solu
 - 🧾 **Document Forgery Detection**  
   Detects tampered or altered documents using OCR pipelines and deep learning models.
 
-- 🧠 **Behavioral Profiling**  
+- 🧠 **Behavioral Profiling (In Progress)**  
   Utilizes Graph Neural Networks (GNNs) to analyze relationships between entities and identify collusion rings.
 
-- 🔐 **Federated Learning**  
+- 🔐 **Federated Learning (In Progress)**  
   Enables insurers to collaboratively train models without exposing sensitive data.
 
-- 🧪 **Fraud Simulation**  
+- 🧪 **Fraud Simulation (In Progress)**  
   Uses Generative Adversarial Networks (GANs) to synthesize fraud scenarios for robust training.
 
-- ⚡ **Real-Time Detection**  
+- ⚡ **Real-Time Detection (In Progress)**  
   Integrates lightweight models at the ingestion stage for instant flagging.
 
 - 📊 **Interactive Dashboard**  
