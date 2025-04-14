@@ -14,7 +14,15 @@
 
 The **Adaptive AI Fraud Prevention System** is a comprehensive and scalable solution that leverages advanced AI technologies to identify and mitigate fraudulent activities throughout the insurance lifecycle. It integrates machine learning, document forensics, graph-based behavioral analysis, and federated learning to deliver real-time fraud intelligence.
 
-![AI Fraud Detection Preview](AI_Fraud_Detection_Preview.png)
+
+---
+
+## 🚀 Demo
+
+> Here's a quick preview of the system UI (mockup):
+
+![Fraud Detection UI](AI_Fraud_Detection_Preview.png)  
+*Interactive dashboard showcasing real-time alerts, document verification, and fraud trends.*
 
 ---
 
